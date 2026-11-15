@@ -37,9 +37,9 @@ The Jarvus house skills are vendored under `.agents/skills/` and symlinked into 
 | `specops` | writing or editing anything in `specs/` or `plans/`, starting a feature, reviewing code against a spec, closing out a plan, deciding "what next" |
 | `jarvus-fastify` | any work in `apps/api/`: routes, the auth gateway, plugins, services, `@fastify/env` config, error shapes, OpenAPI |
 | `jarvus-react` | any work in `apps/web/`: components, routes, URL state, Tailwind tokens, accessibility, bundle budget |
-| `ci-quality-gates` | adding or changing GitHub Actions checks, linters/formatters (oxlint, oxfmt, ruff, tofu fmt), `.tool-versions`, test scripts, or when CI is slow or a gate is missing |
+| `jarvus-ci` | adding or changing GitHub Actions checks, linters/formatters (oxlint, oxfmt, ruff, tofu fmt), `.tool-versions`, test scripts, or when CI is slow or a gate is missing |
 | `repo-setup` | creating the GitHub repo, pushing for the first time, touching branch rulesets/default branch/merge policy, or when develop/main plumbing misbehaves |
-| `release-flow` | shipping merged work, drafting or editing a `Release: v*` PR, choosing a version bump, writing release notes; the moment you see `.github/workflows/release-*.yml` or an open Release PR |
+| `jarvus-release-flow` | shipping merged work, drafting or editing a `Release: v*` PR, choosing a version bump, writing release notes; the moment you see `.github/workflows/release-*.yml` or an open Release PR |
 | `axi-skills` | any work on `packages/cli/` or `skills/signatories-axi/` (the admin CLI and its skill packaging): build pipeline, bash shim, SessionStart hook, generated SKILL.md, home vs dashboard views, the bundle drift gate |
 
 Also load the user-level `gitsheets` skill before touching `.gitsheets/*.toml`, the storage layer, or anything that calls `openRepo` / `repo.transact`, and `axi` before designing CLI output.
@@ -80,7 +80,7 @@ Also load the user-level `gitsheets` skill before touching `.gitsheets/*.toml`, 
 - Draft-stage specs live on a draft planning PR (see specops); a PR that adds behavior includes the spec update.
 
 ### Releases
-- This repo will use the Jarvus develop→main Release-PR flow. When shipping, drafting a `Release: v*` PR, choosing a bump, or writing notes, load `release-flow` and follow it; never hand-roll the changelog or merge a release PR without it.
+- This repo will use the Jarvus develop→main Release-PR flow. When shipping, drafting a `Release: v*` PR, choosing a bump, or writing notes, load `jarvus-release-flow` and follow it; never hand-roll the changelog or merge a release PR without it.
 
 ### JSON
 - Use `jq` to inspect or transform JSON output. Do not write inline python/node scripts for it.

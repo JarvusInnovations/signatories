@@ -1,7 +1,7 @@
 name: OpenTofu
 
 # The credential-free `tf/` gate (`specs/architecture.md` § Deployment;
-# `ci-quality-gates`): formatting and validation need no secrets, so they
+# `jarvus-ci`): formatting and validation need no secrets, so they
 # run on every PR including forks and start instantly.
 #
 # The credentialed `tofu plan -concise` that belongs beside this (issue #8)

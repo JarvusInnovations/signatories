@@ -46,7 +46,7 @@ jobs:
         run: bun run --filter='${{ matrix.package }}' test
       # `vite build` resolves the full asset/import graph (CSS, images, route
       # files) that `tsc -b` never sees — cheap, credential-free, in scope
-      # per ci-quality-gates (container image builds are not). Web-only.
+      # per jarvus-ci (container image builds are not). Web-only.
       - name: Build
         if: matrix.package == '@signatories/web'
         run: bun run --filter='${{ matrix.package }}' build
