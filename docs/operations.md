@@ -477,7 +477,7 @@ Publishing a GitHub release (not a draft, not a prerelease if you want the
 tagged with the release version (`vX.Y.Z` → `X.Y.Z`) and `latest`, then runs
 `tofu apply -concise -var image_tag=X.Y.Z` from a GitHub Actions runner
 authenticated via Workload Identity Federation (no long-lived key). See
-`release-flow` for cutting the release itself.
+`jarvus-release-flow` for cutting the release itself.
 
 **Manual applies:** `tf/terraform.tfvars` pins `image_tag` and `public_url`, so a bare `tofu apply -concise` (for example to change IAM) keeps the running service as it is. Update `image_tag` there on each manual deploy. The CI service account holds the template's project admin roles (issue #7, applied 2026-09-19), so the release workflow's `tofu apply` can manage secrets, the registry and IAM on its own.
 
